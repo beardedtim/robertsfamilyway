@@ -1,0 +1,10 @@
+<head>
+  <title><%= (typeof title != "undefined" ? title : "Regin") %></title>
+  <meta name="description" content="<%= (typeof description !== 'undefined' ? description : "Regin is a tool that will help you achieve your goals") %>" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="/assets/img/favicon.webp" />
+  <link rel="stylesheet" href="/assets/css/main.css" />
+  <% if(typeof styles !== 'undefined') { %>
+    <%- await include('styles') %>
+  <%}%>
+</head>

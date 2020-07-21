@@ -1,0 +1,6 @@
+<script src="/assets/js/shared.js" rel="preload"></script>
+<% if (typeof scripts !== 'undefined') { %>
+<% scripts.forEach(function({ preload, src }){ %>
+  <script src="<%= src %>" <% if (preload) { %> rel="preload" <%}%> ></script>
+<% }) %>
+<% } %>

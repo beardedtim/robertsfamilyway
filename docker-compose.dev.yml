@@ -1,0 +1,7 @@
+version: '3'
+services:
+  datastore:
+    image: postgres
+    env_file: .env.pg
+    ports:
+      - "9393:5432"

@@ -1,0 +1,65 @@
+{
+  "name": "regin",
+  "version": "0.0.0",
+  "description": "A system to complete goals",
+  "main": "build/start.js",
+  "repository": "git@github.com:beardedtim/regin.git",
+  "author": {
+    "name": "Tim Roberts",
+    "email": "timroberts@fastmail.org"
+  },
+  "scripts": {
+    "dev": "nodemon --ext \".ts\" --exec \"ts-node -r dotenv-flow/config start.ts\"",
+    "build": "tsc",
+    "typecheck": "yarn build --noEmit",
+    "fmt": "prettier --write \"{server,use-cases,utils,infrastructure,client}/**/*.ts\" && prettier --write \"start.ts\"",
+    "start": "NODE_ENV=production node build/start.js"
+  },
+  "license": "MIT",
+  "engines": {
+    "node": "^14",
+    "npm": "^6",
+    "yarn": "^1"
+  },
+  "dependencies": {
+    "@koa/cors": "^3.1.0",
+    "@koa/multer": "^3.0.0",
+    "@koa/router": "^9.3.1",
+    "@types/jsonwebtoken": "^8.5.0",
+    "elasticsearch": "^16.7.1",
+    "getenv": "^1.0.0",
+    "jsonschema": "^1.2.6",
+    "jsonwebtoken": "^8.5.1",
+    "knex": "^0.21.2",
+    "koa": "^2.13.0",
+    "koa-bodyparser": "^4.3.0",
+    "koa-ejs": "^4.3.0",
+    "koa-helmet": "^5.2.0",
+    "koa-static": "^5.0.0",
+    "multer": "^1.4.2",
+    "pg": "^8.3.0",
+    "pino": "^6.4.0",
+    "redis": "^3.0.2"
+  },
+  "devDependencies": {
+    "@types/elasticsearch": "^5.0.36",
+    "@types/getenv": "^1.0.0",
+    "@types/koa": "^2.11.3",
+    "@types/koa-bodyparser": "^4.3.0",
+    "@types/koa-ejs": "^4.2.2",
+    "@types/koa-helmet": "^5.2.0",
+    "@types/koa-static": "^4.0.1",
+    "@types/koa__cors": "^3.0.1",
+    "@types/koa__multer": "^2.0.1",
+    "@types/koa__router": "^8.0.2",
+    "@types/node": "^14.0.23",
+    "@types/pino": "^6.3.0",
+    "@types/redis": "^2.8.25",
+    "dotenv-flow": "^3.2.0",
+    "nodemon": "^2.0.4",
+    "pino-pretty": "^4.0.3",
+    "prettier": "^2.0.5",
+    "ts-node": "^8.10.2",
+    "typescript": "^3.9.7"
+  }
+}
