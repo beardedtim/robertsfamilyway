@@ -4,8 +4,6 @@ import path from 'path'
 
 import db, { DB } from '../infrastructure/db'
 import log, { Logger } from '../infrastructure/log'
-import cache from '../infrastructure/cache'
-import textSearch, { TextSearch } from '../infrastructure/text-search'
 
 import renderer from '../client/renderer'
 import ViewRoutes from '../client/routes'
@@ -18,8 +16,6 @@ export interface ICustomAppContext {
   db: DB
   log: Logger
   useCases: typeof useCases
-  textSearch: TextSearch
-  cache: typeof cache
   user?: any
   render: (path: string, opts?: object) => void
 }
@@ -35,9 +31,7 @@ server.keys = [getenv.string('COOKIE_SECRET')]
  */
 server.context.db = db
 server.context.log = log
-server.context.cache = cache
 server.context.useCases = useCases
-server.context.textSearch = textSearch
 
 renderer(server as any)
 
@@ -48,7 +42,7 @@ server
   .use(Middleware.error_handling())
   .use(Middleware.parse_body())
   .use(Middleware.not_found())
-  .use(Middleware.log_request(log))
+  // .use(Middleware.log_request(log))
   .use(Middleware.request_time())
   .use(Middleware.security_headers())
   .use(Middleware.cors())

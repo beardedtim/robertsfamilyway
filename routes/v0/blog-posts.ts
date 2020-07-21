@@ -1,6 +1,6 @@
 import Router from '../../server/router'
 import { validate_body } from '../middleware'
-import db from '../../infrastructure/db'
+import * as Middleware from '../middleware'
 
 const router = Router()
 
@@ -34,7 +34,7 @@ router.get('/:id', async (ctx) => {
   ctx.body = {
     data
   }
-}).post('/', validate_body(create_blog_post_schema), async (ctx) => {
+}).post('/', validate_body(create_blog_post_schema), Middleware.is_overlord(), async (ctx) => {
   const data = await ctx.useCases.Blog.create(ctx.request.body, ctx.db)
 
   ctx.status = 201

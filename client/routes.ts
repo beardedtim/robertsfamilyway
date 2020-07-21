@@ -1,16 +1,40 @@
 import Router from '../server/router'
 import * as Errors from '../routes/errors'
+import * as Middleware from './middleware'
 
 const viewRouter = Router()
 
 viewRouter
-  .get('/', (ctx) => {
-    // We MUST either AWAIT this
-    // or RETURN this in order for
-    // it to render correctly
-    return ctx.render('home', { title: 'My Home Page' })
+  .use((ctx, next) => {
+    // Allow the user to be sent as data
+    // to each rendered route
+    ctx.state.user = ctx.user
+    if (ctx.state.user) {
+      ctx.state.user.is_overlord = ctx.user?.iss === 'OVERLORD'
+    }
+    return next()
   })
-  .get('/create-blog', (ctx) =>
+  .get('/', (ctx) => {
+    return ctx.render('home')
+  })
+  .get('/login', ctx => ctx.render('login', {
+    title: 'Log Into Roberts Family Way',
+    scripts: [
+      {
+        src: '/assets/js/login.js'
+      }
+    ],
+    styles: [
+      '/assets/css/login.css'
+    ]
+  }))
+  .get('/logout', ctx => {
+    // clear the cookies
+    ctx.cookies.set('authorization', '', { signed: true })
+    
+    return ctx.redirect('/')
+  })
+  .get('/create-blog', Middleware.is_overlord(), (ctx) =>
     ctx.render('create-blog-post', {
       title: 'Create Blog Post',
       scripts: [

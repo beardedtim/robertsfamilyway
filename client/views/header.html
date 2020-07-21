@@ -3,8 +3,17 @@
     <h2 class="page-header">Regin</h2>
   </a>
   <nav class="main-nav">
+    <% if (typeof user !== 'undefined' && user.is_overlord) { %>
     <a href="/create-blog">
       Create Blog Post
     </a>
+    <a href="/logout">
+      Logout
+    </a>
+  <% } else { %>
+    <a href="/login">
+      Login
+    </a>
+  <% } %>
   </nav>
 </header>

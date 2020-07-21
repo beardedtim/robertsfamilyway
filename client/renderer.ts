@@ -7,7 +7,7 @@ export const renderer = (app: Koa) =>
     root: path.join(__dirname, 'views'),
     layout: 'template',
     viewExt: 'html',
-    debug: true,
+    // debug: true,
     cache: false,
     async: true,
   })
