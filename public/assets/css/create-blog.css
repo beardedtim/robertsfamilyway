@@ -26,7 +26,7 @@ legend {
   color: var(--white);
   padding: var(--padding);
   border-radius: calc(var(--border-radius) / 2);
-  font-family: var(--heading-font);
+  font-family: var(--header-font);
 }
 
 

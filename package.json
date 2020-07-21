@@ -9,8 +9,10 @@
     "email": "timroberts@fastmail.org"
   },
   "scripts": {
+    "build-css": "postcss -c postcss.config.js public/assets/css/**/*.css --dir public/assets/dist",
     "dev": "nodemon --ext \".ts\" --exec \"ts-node -r dotenv-flow/config start.ts\"",
-    "build": "tsc",
+    "build-ts": "tsc",
+    "build": "build-ts && build-css",
     "typecheck": "yarn build --noEmit",
     "fmt": "prettier --write \"{server,use-cases,utils,infrastructure,client}/**/*.ts\" && prettier --write \"start.ts\"",
     "dev::infra-up": "docker-compose -f docker-compose.dev.yml up -d",
@@ -62,6 +64,11 @@
     "dotenv-flow": "^3.2.0",
     "nodemon": "^2.0.4",
     "pino-pretty": "^4.0.3",
+    "postcss-calc": "^7.0.2",
+    "postcss-cli": "^7.1.1",
+    "postcss-css-variables": "^0.17.0",
+    "postcss-import": "^12.0.1",
+    "postcss-preset-env": "^6.7.0",
     "prettier": "^2.0.5",
     "ts-node": "^8.10.2",
     "typescript": "^3.9.7"

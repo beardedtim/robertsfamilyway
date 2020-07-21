@@ -4,7 +4,7 @@
  * 
  * @param name The name that identifies the asset we want
  */
-export const css_asset = (name: string) => `/assets/css/${name}.css`
+export const css_asset = (name: string) => `/assets/dist/${name}.css`
 
 /**
  * Returns the needed values to pass to the view layer in
