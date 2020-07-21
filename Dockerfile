@@ -20,7 +20,7 @@ COPY knexfile.prod.js ./build/knexfile.js
 # Copy over our migrations and sees manually
 # since these are JS files and not TS files
 COPY infrastructure/db/migrations ./build/infrastructure/db
-COPY infrastructure/db/seeds ./build/infrastructure/db
+#COPY infrastructure/db/seeds ./build/infrastructure/db
 
 # Copy over our EJS files
 COPY client/views ./build/client/views
