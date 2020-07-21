@@ -69,7 +69,7 @@ viewRouter
     console.dir(ctx.params.slug)
     const post = await ctx.useCases.Blog.getBySlug(`/${ctx.params.slug}`, ctx.db)
   
-    if (!post && process.env.NODE_ENV !== 'production') {
+    if (!post) {
       // Fake it for demo purposes
       return ctx.render('blog-post', {
         title: 'My Fake Title',
