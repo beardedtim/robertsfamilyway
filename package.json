@@ -13,6 +13,8 @@
     "build": "tsc",
     "typecheck": "yarn build --noEmit",
     "fmt": "prettier --write \"{server,use-cases,utils,infrastructure,client}/**/*.ts\" && prettier --write \"start.ts\"",
+    "dev::infra-up": "docker-compose -f docker-compose.dev.yml up -d",
+    "dev::infra-down": "docker-compose -f docker-compose.dev.yml down",
     "start": "NODE_ENV=production node build/start.js"
   },
   "license": "MIT",

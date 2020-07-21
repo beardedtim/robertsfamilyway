@@ -1,19 +1,27 @@
-<header>
-  <a href="/">
-    <h2 class="page-header">Regin</h2>
-  </a>
-  <nav class="main-nav">
-    <% if (typeof user !== 'undefined' && user.is_overlord) { %>
-    <a href="/create-blog">
-      Create Blog Post
+<header class="main-header">
+  <div class="container row justified-between aligned-center">
+    <a href="/">
+      <h2 class="page-header">RFW</h2>
     </a>
-    <a href="/logout">
-      Logout
-    </a>
-  <% } else { %>
-    <a href="/login">
-      Login
-    </a>
-  <% } %>
-  </nav>
+    <nav class="main-nav">
+      <a href="/about">
+        About
+      </a>
+      <a href="/posts">
+        Blog
+      </a>
+      <% if (typeof user !== 'undefined' && user.is_overlord) { %>
+      <a href="/create-blog">
+        Create Blog Post
+      </a>
+      <a href="/logout">
+        Logout
+      </a>
+      <% } else { %>
+      <a href="/login">
+        Login
+      </a>
+      <% } %>
+    </nav>
+  </div>
 </header>

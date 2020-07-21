@@ -13,15 +13,122 @@
   flex-grow: 2;
 }
 
-.page > header,
+.main-header,
 .page > footer {
   flex-grow: 0;
 }
 
-.page > header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+.page > footer {
+  color: rgba(33, 33, 33, 0.5);
+  padding: calc(2 * var(--padding));
+  border-top: 1px solid var(--border-color);
+}
+
+.page > footer p {
+  font-size: 0.85rem;
+  margin-bottom: unset;
+}
+
+.main-header{
   width: 100%;
   padding: calc(2 * var(--padding));
+  background: var(--white);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.main-nav a {
+  padding: 0 calc(2 * var(--padding));
+}
+
+.main-nav a:not(:last-of-type) {
+  border-right: 1px solid rgba(33, 33, 33, 0.5);
+}
+
+/**
+  FLEX/2D LAYOUT CLASSES
+*/
+.container {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.column {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.row {
+  width: 100%;
+  display: flex;
+}
+
+.justified-between {
+  justify-content: space-between;
+}
+
+.justified-end {
+  justify-content: flex-end;
+}
+
+.aligned-center {
+  align-items: center;
+}
+
+.justified-center {
+  justify-content: center;
+}
+
+.full-height {
+  height: 100%;
+}
+
+/**
+  GRID/3D LAYOUT CLASSES
+*/
+
+.grid {
+  display: grid;
+  width: 100%;
+}
+
+/**
+  Background Colors
+*/
+
+.bg-secondary {
+  background: var(--secondary-color);
+  color: var(--white);
+}
+
+/**
+  Sizing
+*/
+
+p {
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+}
+
+/**
+  SHARED
+*/
+
+#hero {
+  width: 100%;
+  height: 400px;
+  background: var(--background) center center no-repeat;
+  background-size: cover;
+  color: var(--white);
+  position: relative;
+}
+
+#hero .overlay {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: rgba(33, 33, 33, 0.4);
 }

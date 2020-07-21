@@ -1,0 +1,53 @@
+main {
+  display: flex;
+  flex-direction: column;
+}
+
+.page-markup {
+  padding-top: calc(8 * var(--padding));
+  padding-bottom: calc(8 * var(--padding));
+  flex-grow: 2;
+}
+
+.page-cta {
+  background: var(--secondary-color);
+  color: var(--white);
+  padding-top: calc(8 * var(--padding));
+  padding-bottom: calc(8 * var(--padding));
+}
+
+.shop-cta a,
+.signup button {
+  background: var(--primary-color);
+  color: var(--white);
+  padding: calc(2 * var(--padding));
+  border-radius: var(--border-radius);
+  border: unset;
+  cursor: pointer;
+}
+
+.signup {
+  width: 100%;
+}
+
+.newsletter-signup {
+  width: 80%;
+  max-width: 500px;
+}
+
+.newsletter-signup label {
+  margin-bottom: 0.5rem;
+}
+
+.newsletter-signup input {
+  padding: calc(2 * var(--padding));
+  border: unset;
+  border-radius: var(--border-radius);
+  flex-grow: 2;
+  margin-right: var(--padding);
+}
+
+.shop-cta {
+  margin-top: calc(4 * var(--padding));
+  margin-bottom: calc(4 * var(--padding));
+}

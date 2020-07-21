@@ -1,0 +1,94 @@
+section {
+  padding: 2rem 0;
+  min-height: 50vh;
+}
+
+section:not(:last-of-type) {
+  border-bottom: 1px solid var(--border-color);
+}
+
+.section-cta {
+  padding: calc(4 * var(--padding));
+  color: var(--white);
+  background: var(--primary-color);
+  border-radius: var(--border-radius);
+  font-family: var(--body-font);
+  font-weight: 100;
+  font-size: 1.5rem;
+}
+
+.section-cta:visited {
+  color: var(--white);
+}
+
+.section-heading {
+  font-weight: 100;
+  margin-bottom: 4rem;
+  font-size: 5rem;
+}
+
+.goods {
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  grid-gap: 1rem;
+  justify-content: space-between;
+  padding: calc(4 * var(--padding)) var(--padding);
+}
+
+.goods-card {
+  border-radius: var(--border-radius);
+  border: 1px solid var(--border-color);
+  padding: var(--padding);
+  padding-bottom: calc(4 * var(--padding));
+}
+
+.goods-card-heading {
+  font-weight: 100;
+  margin-bottom: calc(4 * var(--padding));
+  font-size: 3.5rem;
+}
+
+.family {
+  display: flex;
+  flex-direction: column;
+}
+
+.family-photos {
+  position: relative;
+}
+
+.family-photos img {
+  width: auto;
+  height: auto;
+  max-width: 300px;
+  border-radius: var(--border-radius);
+}
+
+.family-photos img:nth-of-type(2) {
+  position: absolute;
+  left: 25%;
+  top: 25%;
+}
+
+.family-info {
+  padding: calc(4 * var(--padding));
+  text-align: right;
+}
+
+.family-info p {
+  font-size: 1.75rem;
+  margin-bottom: calc(2 * var(--padding));
+}
+
+@media screen and (min-width: 1080px) {
+  .family {
+    flex-direction: row;
+  }
+  .family-info {
+    max-width: 50%;
+  }
+}
+
+.family-cta {
+  align-self: flex-end;
+  margin-top: 4rem;
+}

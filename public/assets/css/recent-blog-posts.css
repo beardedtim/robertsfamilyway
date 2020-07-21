@@ -1,0 +1,29 @@
+.recent-blog-posts {
+  width: 80%;
+}
+
+.recent-blog-post {
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  margin-bottom: calc(8 * var(--padding));
+  padding: calc(4 * var(--padding));
+}
+
+.blog-post-header {
+  margin-bottom: calc(2 * var(--padding));
+}
+
+.blog-post-header h4 {
+  font-weight: 700;
+  font-size: 2.25rem;
+}
+
+.blog-post-cta {
+  align-self: flex-end;
+  margin-top: calc(2 * var(--padding));
+  color: var(--primary-color);
+}
+
+.page-cta {
+  min-height: unset;
+}

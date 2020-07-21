@@ -1,28 +1,15 @@
-<% if (typeof hero !== 'undefined') { %>
-<div id="hero" style="--background: url('<%- hero %>')">
-  <div class="overlay column aligned-center justified-end">
-    <h2>
-      <%- title %>
-    </h2>
-  </div>
-</div>
-<% } else { %>
-<h2>
-  <%- title %>
-</h2>
-<% } %>
-<div class="page-markup column container">
-  <%- body %>
-</div>
+<!--
+  Page Call To Action
+-->
 <section class="page-cta">
   <div class="container column">
     <h3>Like what you read?</h3>
     <div class="newsletter-signup column">
-      <label for="newsletter-signup">Signup For Our Newsletter</label>
+      <label for="newsletter-signup">Sign up For Our Newsletter</label>
       <div class="signup row">
         <input type="email" id="newsletter-signup" name="newsletter" />
         <button>
-          Signup
+          Sign up
         </button>
       </div>
     </div>

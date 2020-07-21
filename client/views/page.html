@@ -1,0 +1,15 @@
+<% if (typeof hero !== 'undefined') { %>
+  <div id="hero" style="--background: url('<%- hero %>')">
+    <h2>
+      <%- title %>
+    </h2>
+  </div>
+<% } else { %>
+  <h2>
+    <%- title %>
+  </h2>
+<% } %>
+<div class="page-markup">
+  <%- body %>
+</div>
+<%- await include('page-cta') %>

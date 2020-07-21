@@ -1,1 +1,76 @@
-<h2>I am the home page!</h2>
+<!--
+  Hero Area
+-->
+<div id="hero" style="--background: url('/assets/img/family-one.jpg')">
+  <div class="overlay">
+    <div class="container justified-center aligned-center full-height column">
+      <h3>That's Just The</h3>
+      <h2>Roberts Family Way</h2>
+    </div>
+  </div>
+</div>
+
+<!--
+  First Call To Action Area
+  What we sell/do
+-->
+<section>
+  <div class="container column aligned-center">
+    <h3 class="section-heading">Our Goods</h3>
+    <div class="grid goods">
+      <div class="column goods-card">
+        <h4 class="goods-card-heading">Soaps</h4>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam, delectus nisi fuga excepturi, nemo iure
+          laborum
+          perspiciatis dolorem, et placeat accusantium!</p>
+      </div>
+      <div class="column goods-card">
+        <h4 class="goods-card-heading">Candles</h4>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam, delectus nisi fuga excepturi, nemo iure
+          laborum
+          perspiciatis dolorem, et placeat accusantium!</p>
+      </div>
+      <div class="column goods-card">
+        <h4 class="goods-card-heading">Masks</h4>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam, delectus nisi fuga excepturi, nemo iure
+          laborum
+          perspiciatis dolorem, et placeat accusantium!</p>
+      </div>
+      <div class="column goods-card">
+        <h4 class="goods-card-heading">Sauces</h4>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam, delectus nisi fuga excepturi, nemo iure
+          laborum
+          perspiciatis dolorem, et placeat accusantium!</p>
+      </div>
+    </div>
+    <a href="https://etsy.com/" target="_blank" rel="noopener noreferrer" class="section-cta">
+      See Our Shop
+    </a>
+  </div>
+</section>
+
+<!--
+  Who We Are
+-->
+<section class="bg-secondary">
+  <div class="container column aligned-center">
+    <h3 class="section-heading">Our Family</h3>
+    <div class="aligned-center family">
+      <div class="family-photos">
+        <img src="/assets/img/kate-grad-one.jpg" alt="Our Most Recent Graduate" title="Our Most Revent Graduate" />
+        <img src="/assets/img/santa-one.jpg" alt="Three Generations of Living the Roberts Way"
+          title="Three Generations of Living the Roberts Way" />
+        <img src="/assets/img/kate-grad-three.jpg" alt="Mom is foxy AF" title="Mom is foxy AF" />
+      </div>
+      <div class="family-info column">
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officiis, ad optio quisquam officia commodi, dolorum nulla repudiandae inventore nihil error, doloribus soluta earum iusto dolor dicta quo modi minus nobis!</p>  
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Enim, nesciunt. Architecto suscipit, alias expedita numquam dicta iure esse eos ipsa ad qui odit dignissimos aliquid nulla at culpa quidem! Itaque.</p>
+        <a class="section-cta family-cta" href="/about">
+          Read More
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+<%- await include('recent-blog-posts') %>
+<%- await include('page-cta') %>
