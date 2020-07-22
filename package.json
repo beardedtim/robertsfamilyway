@@ -12,7 +12,7 @@
     "build-css": "postcss -c postcss.config.js public/assets/css/**/*.css --dir public/assets/dist",
     "dev": "nodemon --ext \".ts\" --exec \"ts-node -r dotenv-flow/config start.ts\"",
     "build-ts": "tsc",
-    "build": "yarn build-ts && yarn build-css",
+    "build": "yarn build-ts",
     "typecheck": "yarn build --noEmit",
     "fmt": "prettier --write \"{server,use-cases,utils,infrastructure,client}/**/*.ts\" && prettier --write \"start.ts\"",
     "dev::infra-up": "docker-compose -f docker-compose.dev.yml up -d",
