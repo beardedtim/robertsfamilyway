@@ -1,10 +1,13 @@
+import env from  'getenv'
 /**
  * Returns the needed values to pass to the view layer in 
  * order to request this CSS asset.
  * 
  * @param name The name that identifies the asset we want
  */
-export const css_asset = (name: string) => `/assets/dist/${name}.css`
+export const css_asset = (name: string) => env.string('NODE_ENV', 'development') === 'production'
+  ? `/assets/dist/${name}.css`
+  : `/assets/css/${name}.css`
 
 /**
  * Returns the needed values to pass to the view layer in

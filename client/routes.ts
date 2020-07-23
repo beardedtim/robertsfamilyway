@@ -1,7 +1,7 @@
 import Router from '../server/router'
-import * as Errors from '../routes/errors'
 import * as Middleware from './middleware'
 import * as Utils from './utils'
+import env from 'getenv'
 
 const viewRouter = Router()
 
@@ -13,6 +13,10 @@ viewRouter
     if (ctx.state.user) {
       ctx.state.user.is_overlord = ctx.user?.iss === 'OVERLORD'
     }
+    ctx.state.asset_path = env.string('NODE_ENV', 'development') === 'production'
+      ? '/assets/dist'
+      : '/assets/css'
+
     return next()
   })
   .get('/', (ctx) => {
