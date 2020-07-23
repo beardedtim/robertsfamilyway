@@ -79,6 +79,10 @@ section:not(:last-of-type) {
   margin-bottom: calc(2 * var(--padding));
 }
 
+.family-info a {
+  color: var(--white);
+}
+
 @media screen and (min-width: 1080px) {
   .family {
     flex-direction: row;
