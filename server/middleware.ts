@@ -60,7 +60,11 @@ export const authentication: MiddlewareFN = () => async (ctx, next) => {
   let user
 
   if (token) {
-    user = await verify(token, getenv.string('JWT_SECRET'))
+    try {
+      user = await verify(token, getenv.string('JWT_SECRET'))
+    } catch (e) {
+      // allow bad sigs
+    }
   }
 
   ctx.user = user
